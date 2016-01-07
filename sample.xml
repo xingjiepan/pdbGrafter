@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdbGrafterInput>
+  <structures>
+    <structure>
+      <name>s1</name>
+      <file>input.pdb</file>
+    </structure>
+  </structures>
+
+  <grafters>
+    <residueGrafter>
+      <target>
+        <structure>s1</structure>
+        <model>0</model>
+        <chain>A</chain>
+        <residue>8</residue>
+      </target>
+      <source>
+        <structure>s1</structure>
+        <model>0</model>
+        <chain>A</chain>
+        <residue>7</residue>
+      </source>
+    </residueGrafter>
+    
+    <residueGrafter>
+      <target>
+        <structure>s1</structure>
+        <model>0</model>
+        <chain>A</chain>
+        <residue>7</residue>
+      </target>
+      <source>
+        <structure>s1</structure>
+        <model>0</model>
+        <chain>A</chain>
+        <residue>6</residue>
+      </source>
+    </residueGrafter>
+  </grafters>
+  
+  <outputs>
+    <structure>
+      <name>s1</name>
+      <file>out.pdb</file>
+    </structure>
+  </outputs>
+</pdbGrafterInput>
