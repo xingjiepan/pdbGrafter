@@ -87,6 +87,7 @@ class GrafterXMLInterface():
     
     #Get all structures
     for structure in xmlRoot.find('structures'):
+      print "Loading pdb file", structure.find('file').text
       self.structureDic[structure.find('name').text] = self.PDBparser.get_structure( structure.find('name').text, structure.find('file').text  ) 
     
     #Get all grafters
@@ -109,6 +110,7 @@ class GrafterXMLInterface():
         sRT= grafter.find('source').find('residue').text 
         sR = int( sRT )
         grafterName = tST+'_'+tMT+'_'+tCT+'_'+tRT+'-'+sST+'_'+sMT+'_'+sCT+'_'+sRT
+        print "Loading grafter", grafterName
         self.gFactory.add( grafterName, ResidueGrafter(tS, tM, tC, tR, sS, sM, sC, sR) )
         
     #Get all out put structures
@@ -128,6 +130,7 @@ class GrafterXMLInterface():
     Save pdb output files specified by the XML input file
     '''
     for structure in self.outputDic.keys():
+      print "Saving structure", self.outputDic[structure]
       self.PDBio.set_structure( self.structureDic[structure] ) 
       self.PDBio.save( self.outputDic[structure] )
     return
